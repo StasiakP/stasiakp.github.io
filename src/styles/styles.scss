@@ -1,6 +1,148 @@
 @import "./consts";
+@import "./fonts";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: $secondary;
   color: $primary;
+  font-family: "Nunito Extra Light";
+}
+
+header {
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
+  color: $positive-light;
+  h1 {
+    font-family: "Nunito Extra Bold";
+  }
+  h2 {
+    font-family: "Nunito Extra Light";
+  }
+}
+
+main {
+  font-size: 0.85rem;
+}
+
+hr {
+  color: $secondary-light;
+}
+
+section {
+  h3,
+  h4,
+  h5 {
+    font-family: "Nunito Bold";
+  }
+  h3 {
+    padding: 0rem 1rem 0rem 1rem;
+  }
+}
+
+.opa-75 {
+  opacity: 0.75;
+}
+
+.opa-50 {
+  opacity: 0.5;
+}
+
+.chips-container {
+  display: flex;
+  margin-top: 1rem;
+  &__item {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-right: 0.5rem;
+    background-color: rgba($color: $positive-light, $alpha: 0.25);
+    border-radius: 1rem;
+    color: $positive-light;
+    font-family: "Nunito Bold";
+    white-space: nowrap;
+  }
+}
+
+.tile {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  &:hover {
+    background-color: $secondary-light;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px -6px 20px -10px
+      rgba($color: $secondary-dark, $alpha: 0.5);
+    -moz-box-shadow: 0px -6px 20px -10px
+      rgba($color: $secondary-dark, $alpha: 0.5);
+    box-shadow: 0px -6px 20px -10px rgba($color: $secondary-dark, $alpha: 0.5);
+  }
+}
+
+.about-me {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.nav {
+  display: none;
+}
+
+.nav-container {
+  position: sticky;
+  top: 7.5rem;
+  ul > li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+    > a {
+      font-family: "Nunito Bold";
+      text-decoration: none;
+      color: $primary;
+      opacity: 0.5;
+      &:hover,
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-evenly;
+  > a {
+    color: $primary;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+    > a {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: block;
+  }
+  .section-header {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section-container {
+    display: block;
+    position: sticky;
+    text-align: center;
+    top: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    > .section-header {
+      opacity: 0.5;
+    }
+  }
 }
