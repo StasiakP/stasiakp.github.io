@@ -31,7 +31,10 @@
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
-              "src/styles/styles.scss"
+              "src/styles/styles.scss",
+              "src/assets/fontawesome/scss/fontawesome.scss",
+              "src/assets/fontawesome/scss/solid.scss",
+              "src/assets/fontawesome/scss/brands.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -97,7 +100,10 @@
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
-              "src/styles/styles.scss"
+              "src/styles/styles.scss",
+              "src/assets/fontawesome/scss/fontawesome.scss",
+              "src/assets/fontawesome/scss/solid.scss",
+              "src/assets/fontawesome/scss/brands.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
