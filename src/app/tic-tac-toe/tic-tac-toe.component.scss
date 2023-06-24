@@ -1,0 +1,70 @@
+@import "../../styles/consts";
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.board {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  > .board__tile {
+    width: 100px;
+    height: 100px;
+    float: left;
+    cursor: pointer;
+    &:nth-child(2),
+    &:nth-child(8) {
+      border-left: 1px solid rgba($color: $primary, $alpha: 0.25);
+      border-right: 1px solid rgba($color: $primary, $alpha: 0.25);
+    }
+    &:nth-child(4),
+    &:nth-child(6) {
+      border-top: 1px solid rgba($color: $primary, $alpha: 0.25);
+      border-bottom: 1px solid rgba($color: $primary, $alpha: 0.25);
+    }
+    &:nth-child(5) {
+      border: 1px solid rgba($color: $primary, $alpha: 0.25);
+    }
+    > p {
+      text-align: center;
+      vertical-align: middle;
+      line-height: 100px;
+      font-size: 3rem;
+      font-family: "Nunito Extra Bold";
+      &.X {
+        color: rgba($color: $destructive, $alpha: 1);
+      }
+      &.O {
+        color: rgba($color: $positive, $alpha: 1);
+      }
+    }
+  }
+}
+.board-footer {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  > button {
+    margin: 0 auto;
+    display: block;
+    background-color: rgba($color: $neutral, $alpha: 0.25);
+    border: none;
+    color: $neutral;
+    border-radius: 1rem;
+    padding: 5px 10px 5px 10px;
+    font-size: 1rem;
+    font-family: "Nunito Bold";
+  }
+  &__winner-text {
+    height: 48px;
+    > p {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+}

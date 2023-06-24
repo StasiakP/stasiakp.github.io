@@ -4,5 +4,6 @@ export interface SectionItem {
   additionalInfo?: string;
   image?: any;
   content: string;
+  routerUrl?: string;
   chips?: string[];
 }

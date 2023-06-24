@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="board">
+    <div
+      class="board__tile"
+      *ngFor="let tile of gameArray(); let index = index"
+      (click)="tileClicked(index)"
+    >
+      <p class="{{ gameArray()[index] }}">{{ tile }}</p>
+    </div>
+  </div>
+  <div class="board-footer">
+    <div class="board-footer__winner-text">
+      <p *ngIf="gameOver">{{ player }} wins!</p>
+    </div>
+    <button (click)="restartGame()">New game</button>
+  </div>
+</div>
