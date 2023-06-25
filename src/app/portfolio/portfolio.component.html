@@ -94,7 +94,7 @@
                 </ng-container>
                 <div
                   *ngFor="let sectionProjectsItem of sectionProjects.items"
-                  class="row tile"
+                  class="row tile project"
                 >
                   <ng-container
                     [ngTemplateOutlet]="tile"
@@ -122,15 +122,17 @@
 </ng-template>
 
 <ng-template #tile let-type="type" let-sectionItem="sectionItem">
-  <div class="col-12 col-md-3">
+  <div class="{{ type === tileType.Projects ? 'col-6' : 'col-12' }} col-md-3">
     <span *ngIf="type === tileType.Experience" class="opa-50">
       {{ sectionItem.additionalInfo }}
     </span>
-    <a *ngIf="type === tileType.Projects" routerLink="section.routerLink"
+    <a
+      *ngIf="type === tileType.Projects"
+      routerLink="{{ sectionItem.routerUrl }}"
       ><img src="{{ sectionItem.image }}"
     /></a>
   </div>
-  <div class="col-12 col-md-9">
+  <div class="{{ type === tileType.Projects ? 'col-6' : 'col-12' }} col-md-9">
     <h4>{{ sectionItem.title }}</h4>
     <h5 class="opa-50" *ngIf="type === tileType.Experience">
       {{ sectionItem.subtitle }}
