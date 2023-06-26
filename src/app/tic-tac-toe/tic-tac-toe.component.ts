@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, computed, effect, signal } from '@angular/core';
 
 @Component({
   selector: 'app-tic-tac-toe',
@@ -24,6 +24,17 @@ export class TicTacToeComponent implements OnInit {
     [2, 4, 6],
   ];
 
+  constructor() {
+    effect(() => {
+      if (this.gameArray().filter((x) => x !== null).length) {
+        this.checkResult();
+        if (this.gameOver === false) {
+          this.changePlayer();
+        }
+      }
+    });
+  }
+
   public ngOnInit(): void {}
 
   restartGame(): void {
@@ -35,10 +46,6 @@ export class TicTacToeComponent implements OnInit {
   public tileClicked(index: number) {
     if (this.tileAvailable(index)) {
       this.fillTile(index);
-      this.checkResult();
-      if (this.gameOver === false) {
-        this.changePlayer();
-      }
     }
   }
 
